@@ -83,21 +83,27 @@ class _SelectionDialogState extends State<SelectionDialog> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              IconButton(
-                padding: const EdgeInsets.all(0),
-                iconSize: 20,
-                icon: widget.closeIcon!,
-                onPressed: () => Navigator.pop(context),
-              ),
-              if (!widget.hideSearch)
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  child: TextField(
-                    style: widget.searchStyle,
-                    decoration: widget.searchDecoration,
-                    onChanged: _filterElements,
+              Row(
+                children: [
+                  if (!widget.hideSearch)
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: TextField(
+                          style: widget.searchStyle,
+                          decoration: widget.searchDecoration,
+                          onChanged: _filterElements,
+                        ),
+                      ),
+                    ),
+                  IconButton(
+                    padding: const EdgeInsets.all(0),
+                    iconSize: 20,
+                    icon: widget.closeIcon!,
+                    onPressed: () => Navigator.pop(context),
                   ),
-                ),
+                ],
+              ),
               Expanded(
                 child: ListView(
                   children: [

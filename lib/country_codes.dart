@@ -485,7 +485,7 @@ const List<Map<String, String>> codes = [
     "dial_code": "+504",
   },
   {
-    "name": "香港",
+    "name": "中国香港",
     "code": "HK",
     "dial_code": "+852",
   },
